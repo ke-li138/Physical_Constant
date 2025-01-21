@@ -1,0 +1,14 @@
+html
+head
+  title Constants
+  script(defer type="module", id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js")
+body
+  h1 Physical and Mathematical Constants
+  ul
+    if constants
+      each constant in constants
+        li <b>Symbol</b>: #{constant.symbol}, <b>Name</b>: #{constant.name}, <b>Value</b>: #{constant.value} <a href="/constants/#{constant._id}">Edit</a>
+
+  a(href="/constants/add") <b>Add Another Mathematical or Physical Constants</b>
+  br
+  a(href="/api/test") <b>Test the APIs</b>

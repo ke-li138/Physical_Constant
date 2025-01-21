@@ -1,0 +1,25 @@
+html 
+    head 
+        title Edit Constants
+        script(defer type="module", id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js").
+    body 
+        h1 Edit a Constant
+        h3 The Constant You Selected to Edit:
+        p  \( \hbar \)
+        p <b>Symbol</b>: #{constant.symbol}, <b>Name</b>: #{constant.name}, <b>Value</b>: #{constant.value}
+        h1 Edit Your Constant Here: 
+        div
+            label(for="symbol") Symbol:    
+            input#symbol(type="text", name="symbol")
+            br
+            label(for="name") Name:  
+            input#name(type="text", name="name")
+            br
+            label(for="value") Value:       
+            input#value(type="text", name="value")
+            br
+            <input type="hidden" name="value" value="#{constant._id}" id="constant_id">
+            <button id="put_submit">Submit</button>
+            <button id="but_delete">Delete</button>
+
+    script(type="module", src="/static/js/edit.js").

@@ -1,0 +1,29 @@
+html 
+    head 
+        title Test APIs
+    body 
+        div
+            button#but_get_all GET ALL
+            br
+            label(for="constant_id") constant_id: 
+            input#constant_id(type="text", name="constant_id")
+            br
+            label(for="symbol") Symbol:    
+            input#symbol(type="text", name="symbol")
+            br
+            label(for="name") Name:  
+            input#name(type="text", name="name")
+            br
+            label(for="value") Value:       
+            input#value(type="text", name="value")
+            br
+            button#but_get GET 
+            button#but_put PUT
+            button#but_post POST
+            button#but_delete DELETE
+        p *Please only enter the constant_id using delete and get and keep constant_id empty while using POST
+        br
+        p#data
+        br
+        a(href="/constants") <b>Back to Home Page</b>
+    script(type="module", src="/static/js/apiTest.js").

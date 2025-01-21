@@ -1,0 +1,32 @@
+html 
+    head 
+        title Add Constants
+    body 
+        h1 Add a Constant
+        form(method="post", action="/constants/add")
+            label(for="symbol") Symbol:    
+            input#symbol(type="text", name="symbol")
+            br
+            label(for="name") Name:  
+            input#name(type="text", name="name")
+            br
+            label(for="value") Value:       
+            input#value(type="text", name="value")
+            br
+            input#butt(type="submit", value="Submit")
+        script(type="text/javascript").
+            var Symbol = document.querySelector("#symbol");
+            var button = document.querySelector("#butt");
+            button.disabled = true;
+            Symbol.addEventListener('input', () => {
+                if (Symbol.value.trim() === '') {
+                    button.disabled = true;
+                }
+                else {
+                    button.disabled = false;
+                }
+            });
+
+
+    
+      
